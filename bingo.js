@@ -1,47 +1,30 @@
-const ANIMALS = [
-    'Aardvark', 'Albatross', 'Alligator', 'Alpaca', 'Anteater',
-    'Antelope', 'Armadillo', 'Baboon', 'Badger', 'Barracuda',
-    'Bat', 'Bear', 'Beaver', 'Bison', 'Boar',
-    'Buffalo', 'Butterfly', 'Camel', 'Capybara', 'Caribou',
-    'Cassowary', 'Cat', 'Caterpillar', 'Cheetah', 'Chicken',
-    'Chimpanzee', 'Chinchilla', 'Clam', 'Cobra', 'Cockroach',
-    'Cod', 'Cormorant', 'Coyote', 'Crab', 'Crane',
-    'Crocodile', 'Crow', 'Deer', 'Dinosaur', 'Dog',
-    'Dolphin', 'Donkey', 'Dove', 'Dragonfly', 'Duck',
-    'Dugong', 'Eagle', 'Echidna', 'Eel', 'Elephant',
-    'Elk', 'Emu', 'Falcon', 'Ferret', 'Finch',
-    'Fish', 'Flamingo', 'Fly', 'Fox', 'Frog',
-    'Gazelle', 'Gerbil', 'Giraffe', 'Gnat', 'Goat',
-    'Goldfish', 'Goose', 'Gorilla', 'Grasshopper', 'Gull',
-    'Hamster', 'Hare', 'Hawk', 'Hedgehog', 'Heron',
-    'Herring', 'Hippopotamus', 'Hornet', 'Horse', 'Hummingbird',
-    'Hyena', 'Ibex', 'Ibis', 'Iguana', 'Jackal',
-    'Jaguar', 'Jay', 'Jellyfish', 'Kangaroo', 'Kingfisher',
-    'Koala', 'Kookaburra', 'Lemur', 'Leopard', 'Lion',
-    'Llama', 'Lobster', 'Locust', 'Loris', 'Louse',
-    'Lyrebird', 'Magpie', 'Mallard', 'Manatee', 'Mandrill',
-    'Mantis', 'Meerkat', 'Mink', 'Mole', 'Mongoose',
-    'Monkey', 'Moose', 'Mosquito', 'Mouse', 'Mule',
-    'Narwhal', 'Newt', 'Nightingale', 'Octopus', 'Okapi',
-    'Opossum', 'Ostrich', 'Otter', 'Owl', 'Ox',
-    'Oyster', 'Panda', 'Panther', 'Parrot', 'Partridge',
-    'Peafowl', 'Pelican', 'Penguin', 'Pheasant', 'Pig',
-    'Pigeon', 'Pony', 'Porcupine', 'Porpoise', 'Prairie Dog',
-    'Quail', 'Quelea', 'Quetzal', 'Rabbit', 'Raccoon',
-    'Rail', 'Ram', 'Rat', 'Raven', 'Red Deer',
-    'Red Panda', 'Reindeer', 'Rhinoceros', 'Rook', 'Salamander',
-    'Salmon', 'Sand Dollar', 'Sandpiper', 'Sardine', 'Scorpion',
-    'Seahorse', 'Seal', 'Shark', 'Sheep', 'Shrew',
-    'Skunk', 'Snail', 'Snake', 'Sparrow', 'Spider',
-    'Spoonbill', 'Squid', 'Squirrel', 'Starling', 'Stingray',
-    'Stinkbug', 'Stork', 'Swallow', 'Swan', 'Tapir',
-    'Tarsier', 'Termite', 'Tiger', 'Toad', 'Trout',
-    'Turkey', 'Turtle', 'Viper', 'Vulture', 'Wallaby',
-    'Walrus', 'Wasp', 'Weasel', 'Whale', 'Wildcat',
-    'Wolf', 'Wolverine', 'Wombat', 'Woodcock', 'Woodpecker',
-    'Worm', 'Wren', 'Yak', 'Zebra'
-];
-
+const TOPICS = [
+  "Family Dinner",
+  "Blue Light",
+  "Landline",
+  "Circadian Rhythm",
+  "Mindful Eating",
+  "Emotional Regulation",
+  "Grades",
+  "Anxiety",
+  "iPad Kids",
+  "Dopamine",
+  "Friends",
+  "MRI",
+  "Boundaries",
+  "Gaming",
+  "CDC",
+  "Gross Motor Skills",
+  "Social Displacement",
+  "AI",
+  "Reading Levels",
+  "Park",
+  "Influence",
+  "Car Rides",
+  "Attention Span",
+  "Instagram",
+  "COVID-19"
+]
 const BOARD_SIZE = 5;
 const CENTER_INDEX = 12;
 const FREE_SPACE = 'FREE';
@@ -85,7 +68,7 @@ function shuffleArray(array, rng) {
 
 function getShuffledTerms(seed) {
     const rng = mulberry32(seed);
-    const shuffled = shuffleArray(ANIMALS, rng);
+    const shuffled = shuffleArray(TOPICS, rng);
     const terms = shuffled.slice(0, BOARD_SIZE * BOARD_SIZE);
     terms[CENTER_INDEX] = FREE_SPACE;
     return terms;
